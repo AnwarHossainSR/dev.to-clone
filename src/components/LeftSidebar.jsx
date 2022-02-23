@@ -15,6 +15,7 @@ import {
   FcTodoList,
   FcVideoCall,
 } from "react-icons/fc";
+import { GrFormClose } from "react-icons/gr";
 import { IoLogoFacebook, IoLogoGithub, IoLogoTwitter } from "react-icons/io";
 import { RiInstagramFill, RiTwitchLine } from "react-icons/ri";
 
@@ -44,178 +45,354 @@ const LeftSidebar = (props) => {
     setmore(!more);
   };
   return (
-    <aside className="leftBar">
-      <nav className="leftBar__menu">
-        <ul>
-          <li>
-            <a href="/home">
-              <i>
-                <FcHome />
-              </i>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/reading">
-              <i>
-                <FcReading />
-              </i>
-              Reading List
-            </a>
-          </li>
-          <li>
-            <a href="/list">
-              <i>
-                <FcTodoList />
-              </i>
-              list
-            </a>
-          </li>
-          <li>
-            <a href="/podcast">
-              <i>
-                <AiFillAudio />
-              </i>
-              Podcasts
-            </a>
-          </li>
-          <li>
-            <a href="/videos">
-              <i>
-                <FcVideoCall />
-              </i>
-              Videos
-            </a>
-          </li>
-
-          <li>
-            <a href="/tags">
-              <i>
-                <FaTags />
-              </i>
-              Tags
-            </a>
-          </li>
-          <li className={more ? "more hidden" : "more"}>
-            <i></i>
-            <a href="/#" onClick={toggle}>
-              More...
-            </a>
-          </li>
-          <div className={more ? "list" : "list hidden"}>
+    <>
+      <aside className="leftBar">
+        <nav className="leftBar__menu">
+          <ul>
             <li>
-              <a href="/code">
+              <a href="/home">
                 <i>
-                  <FcAbout />
+                  <FcHome />
                 </i>
-                Code of Conduct
+                Home
               </a>
             </li>
             <li>
-              <a href="/FAQ">
+              <a href="/reading">
                 <i>
-                  <FcIdea />
+                  <FcReading />
                 </i>
-                FAQ
+                Reading List
               </a>
             </li>
             <li>
-              <a href="/DEV">
+              <a href="/list">
                 <i>
-                  <FcShop />
+                  <FcTodoList />
                 </i>
-                DEV Shop
+                list
               </a>
             </li>
             <li>
-              <a href="/sponsers">
+              <a href="/podcast">
                 <i>
-                  <FcLike />
+                  <AiFillAudio />
                 </i>
-                Sponsers
+                Podcasts
               </a>
             </li>
             <li>
-              <a href="/about">
+              <a href="/videos">
                 <i>
-                  <FaDev />
+                  <FcVideoCall />
                 </i>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/privacy">
-                <i>
-                  <FcBriefcase />
-                </i>
-                Privacy Policy
+                Videos
               </a>
             </li>
 
             <li>
-              <a href="/terms">
+              <a href="/tags">
                 <i>
-                  <FcDisclaimer />
+                  <FaTags />
                 </i>
-                Terms of use
+                Tags
               </a>
             </li>
-            <li>
-              <a href="/contact">
-                <i>
-                  <FcBusinessContact />
-                </i>
-                Contact
+            <li className={more ? "more hidden" : "more"}>
+              <i></i>
+              <a href="/#" onClick={toggle}>
+                More...
               </a>
             </li>
-          </div>
-        </ul>
-      </nav>
-      <div className={more ? "leftBar__social" : "leftBar__social hidden"}>
-        <a href="/twitter">
-          <i>
-            <IoLogoTwitter />
-          </i>
-        </a>
-        <a href="/facebook">
-          <i>
-            <IoLogoFacebook />
-          </i>
-        </a>
-        <a href="/github">
-          <i>
-            <IoLogoGithub />
-          </i>
-        </a>
-        <a href="/instagram">
-          <i>
-            <RiInstagramFill />
-          </i>
-        </a>
-        <a href="/twitch">
-          <i>
-            <RiTwitchLine />
-          </i>
-        </a>
-      </div>
-      <nav className="leftBar__taglist">
-        <header>
-          <h3>My Tags</h3>
-          <i>
-            <CgShapeHexagon />
-          </i>
-        </header>
-        <ul>
-          {tags.map((tag, id) => {
-            return (
-              <li key={id}>
-                <a href="/#">#{tag}</a>
+            <div className={more ? "list" : "list hidden"}>
+              <li>
+                <a href="/code">
+                  <i>
+                    <FcAbout />
+                  </i>
+                  Code of Conduct
+                </a>
               </li>
-            );
-          })}
-        </ul>
-      </nav>
-    </aside>
+              <li>
+                <a href="/FAQ">
+                  <i>
+                    <FcIdea />
+                  </i>
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="/DEV">
+                  <i>
+                    <FcShop />
+                  </i>
+                  DEV Shop
+                </a>
+              </li>
+              <li>
+                <a href="/sponsers">
+                  <i>
+                    <FcLike />
+                  </i>
+                  Sponsers
+                </a>
+              </li>
+              <li>
+                <a href="/about">
+                  <i>
+                    <FaDev />
+                  </i>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/privacy">
+                  <i>
+                    <FcBriefcase />
+                  </i>
+                  Privacy Policy
+                </a>
+              </li>
+
+              <li>
+                <a href="/terms">
+                  <i>
+                    <FcDisclaimer />
+                  </i>
+                  Terms of use
+                </a>
+              </li>
+              <li>
+                <a href="/contact">
+                  <i>
+                    <FcBusinessContact />
+                  </i>
+                  Contact
+                </a>
+              </li>
+            </div>
+          </ul>
+        </nav>
+        <div className={more ? "leftBar__social" : "leftBar__social hidden"}>
+          <a href="/twitter">
+            <i>
+              <IoLogoTwitter />
+            </i>
+          </a>
+          <a href="/facebook">
+            <i>
+              <IoLogoFacebook />
+            </i>
+          </a>
+          <a href="/github">
+            <i>
+              <IoLogoGithub />
+            </i>
+          </a>
+          <a href="/instagram">
+            <i>
+              <RiInstagramFill />
+            </i>
+          </a>
+          <a href="/twitch">
+            <i>
+              <RiTwitchLine />
+            </i>
+          </a>
+        </div>
+        <nav className="leftBar__taglist">
+          <header>
+            <h3>My Tags</h3>
+            <i>
+              <CgShapeHexagon />
+            </i>
+          </header>
+          <ul>
+            {tags.map((tag, id) => {
+              return (
+                <li key={id}>
+                  <a href="/#">#{tag}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </aside>
+      {props.burgerMenu && (
+        <div className="hamburger">
+          <div className="hamburger__content">
+            <header>
+              <h2>DEV Community</h2>
+              <button onClick={() => props.closeMenu()}>
+                <GrFormClose />
+              </button>
+            </header>
+
+            <div className="hamburger__content__items">
+              <nav className="leftBar__menu">
+                <ul>
+                  <li>
+                    <a href="/home">
+                      <i>
+                        <FcHome />
+                      </i>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/reading">
+                      <i>
+                        <FcReading />
+                      </i>
+                      Reading List
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/list">
+                      <i>
+                        <FcTodoList />
+                      </i>
+                      list
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/podcast">
+                      <i>
+                        <AiFillAudio />
+                      </i>
+                      Podcasts
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/videos">
+                      <i>
+                        <FcVideoCall />
+                      </i>
+                      Videos
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/tags">
+                      <i>
+                        <FaTags />
+                      </i>
+                      Tags
+                    </a>
+                  </li>
+
+                  <li className={more ? "more hidden" : "more"}>
+                    <i></i>
+                    <a href="/#" onClick={toggle}>
+                      More...
+                    </a>
+                  </li>
+
+                  <div className={more ? "list" : "list hidden"}>
+                    <li>
+                      <a href="/code">
+                        <i>
+                          <FcAbout />
+                        </i>
+                        Code of Conduct
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/FAQ">
+                        <i>
+                          <FcIdea />
+                        </i>
+                        FAQ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/DEV">
+                        <i>
+                          <FcShop />
+                        </i>
+                        DEV Shop
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/sponsers">
+                        <i>
+                          <FcLike />
+                        </i>
+                        Sponsers
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/about">
+                        <i>
+                          <FaDev />
+                        </i>
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/privacy">
+                        <i>
+                          <FcBriefcase />
+                        </i>
+                        Privacy Policy
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/terms">
+                        <i>
+                          <FcDisclaimer />
+                        </i>
+                        Terms of use
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/contact">
+                        <i>
+                          <FcBusinessContact />
+                        </i>
+                        Contact
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </nav>
+              <div
+                className={more ? "leftBar__social" : "leftBar__social hidden"}
+              >
+                <a href="/twitter">
+                  <i>
+                    <IoLogoTwitter />
+                  </i>
+                </a>
+                <a href="/facebook">
+                  <i>
+                    <IoLogoFacebook />
+                  </i>
+                </a>
+                <a href="/github">
+                  <i>
+                    <IoLogoGithub />
+                  </i>
+                </a>
+                <a href="/instagram">
+                  <i>
+                    <RiInstagramFill />
+                  </i>
+                </a>
+                <a href="/twitch">
+                  <i>
+                    <RiTwitchLine />
+                  </i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="hamburger overlay"></div>
+        </div>
+      )}
+    </>
   );
 };
 
