@@ -1,0 +1,30 @@
+@media only screen and (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 100%;
+        padding: 1rem;
+    }
+
+    .header .headerContainer {
+        &__hamburgerMenu {
+            display: block;
+        }
+
+        &__searchBox {
+            display: none;
+        }
+
+        &__right {
+            .hidden-search {
+                display: flex;
+            }
+
+            button {
+                display: none;
+            }
+        }
+    }
+
+    .leftBar {
+        display: none;
+    }
+}
