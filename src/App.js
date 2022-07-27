@@ -3,7 +3,7 @@ import "./App.scss";
 import Content from "./components/Content";
 import LeftSidebar from "./components/LeftSidebar";
 import Navigation from "./components/Navigation";
-import RightSidebar from "./components/RightSidebar";
+import RightSidebar from "./components/RightSidebar.jsx";
 
 const App = () => {
   return (
